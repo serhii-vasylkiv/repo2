@@ -1,0 +1,17 @@
+# .github/workflows/ci-cd.yml
+name: CI/CD Pipeline
+
+on:
+  repository_dispatch:
+    types: [triggered_by_repo1]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run CI/CD tasks
+        run: |
+          # Ваші команди для CI/CD
+          echo "Running CI/CD pipeline for repo2"
